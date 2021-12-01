@@ -76,6 +76,11 @@ function startWebRTC(isOfferer) {
     }
   };
 
+  if (!remoteVideo2.srcObject || remoteVideo2.srcObject.id !== stream.id) {
+    remoteVideo2.srcObject = stream;
+  }
+};
+
   navigator.mediaDevices.getUserMedia({
     audio: true,
     video: true,
